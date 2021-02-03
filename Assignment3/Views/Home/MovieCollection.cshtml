@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "My Movie Collection";
+}
+
+@model IEnumerable<Assignment3.Models.Films>
+
+<div>
+    <h2>Movies Currently in Collection:</h2>
+
+    <!--Create a table to iterate through the list and add movies based on what has been entered in the form-->
+    <table>
+        <!--Table Headers-->
+        <thead>
+            <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited</th><th>Lent To:</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+            <!--Gets every instance within the List-->
+            @foreach (Assignment3.Models.Films x in Model)
+            {
+                <!--Makes sure that Independence Day is not included, even if entered-->
+                @if (x.Title != "Independence Day")
+                {
+                    <tr>
+                        <td>@x.Category</td>
+                        <td>@x.Title</td>
+                        <td>@x.Year</td>
+                        <td>@x.Director</td>
+                        <td>@x.Rating</td>
+                        <td>@x.Edited</td>
+                        <td>@x.Lent</td>
+                        <td>@x.Notes</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

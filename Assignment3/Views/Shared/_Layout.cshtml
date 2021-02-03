@@ -1,0 +1,27 @@
+﻿<!--Layout shared by all views-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Joel Hilton Film Collection</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+</head>
+
+<body>
+    <!--This lets each view set its own title-->
+    <h1>@ViewBag.Title</h1>
+
+    <!--Navigation menu to get to the views we want-->
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/Home/MovieForm">Add Movie Form</a></li>
+        <li><a href="/Home/MovieCollection">Movie Collection</a></li>
+        <li><a href="/Home/Podcast">Podcast</a></li>
+    </ul>
+
+    <!--Bring in the html from the other views-->
+    @RenderBody()
+
+</body>
+
+</html>
