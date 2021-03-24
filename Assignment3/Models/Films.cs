@@ -8,19 +8,22 @@ namespace Assignment3.Models
 {
     public class Films
     {
-        [Required]
+        [Key]
+        public int MovieId { get; set; }
+
+        [Required(ErrorMessage = "Please enter the category")]
         public string Category { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter the title")]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter the year")]
         public int Year { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter the director")]
         public string Director { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter the rating")]
         public string Rating { get; set; }
 
 

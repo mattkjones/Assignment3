@@ -5,23 +5,42 @@
 <head>
     <title>The Joel Hilton Film Collection</title>
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
     <!--This lets each view set its own title-->
-    <h1>@ViewBag.Title</h1>
+    <div class="display-2 bg-dark text-white p-2">
+        <h1 class="text-uppercase">@ViewBag.Title</h1>
+    </div>
 
     <!--Navigation menu to get to the views we want-->
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/Home/MovieForm">Add Movie Form</a></li>
-        <li><a href="/Home/MovieCollection">Movie Collection</a></li>
-        <li><a href="/Home/Podcast">Podcast</a></li>
-    </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div>
+            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/MovieForm">Add Movie Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/MovieCollection">Movie Collection</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/Podcast">Podcast</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
 
     <!--Bring in the html from the other views-->
     @RenderBody()
 
+    <br /><br />
+    <!--Footer-->
+    <footer class="text-center bg-light fixed-bottom text-uppercase text-dark p-2">Matt Jones, 2021</footer>
 </body>
 
 </html>

@@ -5,64 +5,76 @@
     ViewBag.Title = "Enter New Movies Below!";
 }
 
-@model Assignment3.Models.Films
+@model Films
 
-<div>
-    <p>Suggest a movie for me to add to my collection using the form below! But beware, if I don't deem the movie good enough to remain in the collection, I reserve the right to remove it.</p>
+<br />
+
+<div class="row m-2">
+    <div class="col-6">
+        <div>
+            <h4>Suggest a movie for me to add to my collection using the form below!</h4>
+            <p>But beware, if I don't deem the movie good enough to remain in the collection, I reserve the right to remove it.</p>
+        </div>
+        <!--Build out a form to input movie suggestions, using asp-for to link the labels and inputs to fields from the model-->
+        <form asp-action="MovieForm" method="post">
+            <div>
+                <label asp-for="Category">Category</label>
+                <input asp-for="Category" />
+            </div>
+
+            <div>
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" />
+            </div>
+
+            <div>
+                <label asp-for="Year">Year</label>
+                <input asp-for="Year" />
+            </div>
+
+            <div>
+                <label asp-for="Director">Director</label>
+                <input asp-for="Director" />
+            </div>
+
+            <div>
+                <label asp-for="Rating">Rating</label>
+                <!--Drop Down Menu-->
+                <select asp-for="Rating">
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                    <option value="PG-13">PG-13</option>
+                    <option value="R">R</option>
+                </select>
+            </div>
+
+            <div>
+                <label asp-for="Edited">Edited</label>
+                <!--Yes/No Option-->
+                <select asp-for="Edited">
+                    <option value="">Select One</option>
+                    <option value="True">Yes</option>
+                    <option value="False">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label asp-for="Lent">Lent To</label>
+                <input asp-for="Lent" />
+            </div>
+
+            <div>
+                <label asp-for="Notes">Notes</label>
+                <input asp-for="Notes" />
+            </div>
+            <br />
+            <button type="submit">Submit Movie Recommendation</button>
+
+            <div asp-validation-summary="All"></div>
+
+        </form>
+    </div>
+    <div class="col-6">
+        <img class="rounded mx-auto d-block img-fluid" src="~/movie_classics.jpg" />
+    </div>
 </div>
-
-<form asp-action="MovieForm" method="post">
-    <div>
-        <label asp-for="Category">Category</label>
-        <input asp-for="Category" />
-    </div>
-
-    <div>
-        <label asp-for="Title">Title</label>
-        <input asp-for="Title" />
-    </div>
-
-    <div>
-        <label asp-for="Year">Year</label>
-        <input asp-for="Year" />
-    </div>
-
-    <div>
-        <label asp-for="Director">Director</label>
-        <input asp-for="Director" />
-    </div>
-
-    <div>
-        <label asp-for="Rating">Rating</label>
-        <!--Drop Down Menu-->
-        <select asp-for="Rating" >
-            <option value="G">G</option>
-            <option value="PG">PG</option>
-            <option value="PG-13">PG-13</option>
-            <option value="R">R</option>
-        </select>
-    </div>
-
-    <div>
-        <label asp-for="Edited">Edited</label>
-        <!--Yes/No Option-->
-        <select asp-for="Edited" >
-            <option value="">Select One</option>
-            <option value="True">Yes</option>
-            <option value="False">No</option>
-        </select>
-    </div>
-
-    <div>
-        <label asp-for="Lent">Lent To</label>
-        <input asp-for="Lent" />
-    </div>
-
-    <div>
-        <label asp-for="Notes">Notes</label>
-        <input asp-for="Notes" />
-    </div>
-
-    <button type="submit">Submit Movie Recommendation</button>
-
-</form>

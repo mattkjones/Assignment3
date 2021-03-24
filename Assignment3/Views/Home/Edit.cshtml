@@ -1,0 +1,77 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Edit Movie";
+}
+
+@model Films
+
+<br />
+
+<div class="row m-2">
+    <div class="col-6">
+        <!--Build out a form to edit movie in database, using asp-for to link the labels and inputs to fields from the model-->
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="MovieId" />
+            <div>
+                <label asp-for="Category">Category</label>
+                <input asp-for="Category" />
+            </div>
+
+            <div>
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" />
+            </div>
+
+            <div>
+                <label asp-for="Year">Year</label>
+                <input asp-for="Year" />
+            </div>
+
+            <div>
+                <label asp-for="Director">Director</label>
+                <input asp-for="Director" />
+            </div>
+
+            <div>
+                <label asp-for="Rating">Rating</label>
+                <!--Drop Down Menu-->
+                <select asp-for="Rating">
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                    <option value="PG-13">PG-13</option>
+                    <option value="R">R</option>
+                </select>
+            </div>
+
+            <div>
+                <label asp-for="Edited">Edited</label>
+                <!--Yes/No Option-->
+                <select asp-for="Edited">
+                    <option value="">Select One</option>
+                    <option value="True">Yes</option>
+                    <option value="False">No</option>
+                </select>
+            </div>
+
+            <div>
+                <label asp-for="Lent">Lent To</label>
+                <input asp-for="Lent" />
+            </div>
+
+            <div>
+                <label asp-for="Notes">Notes</label>
+                <input asp-for="Notes" />
+            </div>
+            <br />
+            <button type="submit">Submit Edit</button>
+
+            <div asp-validation-summary="All"></div>
+
+        </form>
+    </div>
+    <div class="col-6">
+        <img class="rounded mx-auto d-block img-fluid" src="~/movie_classics.jpg" />
+    </div>
+</div>
